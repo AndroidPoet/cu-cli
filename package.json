@@ -9,6 +9,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
     "start": "node dist/cmd/cu-cli/main.js",
     "test": "bash test-clickup.sh"
   },
