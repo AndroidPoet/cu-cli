@@ -1,112 +1,94 @@
-# CU-CLI
+# 🚀 CU-CLI (ClickUp CLI)
 
-A standalone CLI for managing ClickUp tasks, lists, and workspaces.
+[![GitHub License](https://img.shields.io/github/license/AndroidPoet/cu-cli)](https://github.com/AndroidPoet/cu-cli/blob/master/LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/AndroidPoet/cu-cli)](https://github.com/AndroidPoet/cu-cli/stargazers)
 
-## Installation
+A powerful, standalone command-line interface for managing **ClickUp** tasks, lists, and workspaces with speed and efficiency. Built for developers who prefer the terminal over the browser.
 
+---
+
+## ✨ Features
+
+- 🔐 **Secure Auth**: Local configuration and environment variable support.
+- 📂 **Hierarchy Management**: List Workspaces, Spaces, Folders, and Lists.
+- ✅ **Task Operations**: Create, read, update, and delete tasks seamlessly.
+- 🔍 **Filtering**: Filter tasks by status, assignee, and more.
+- 📦 **JSON Output**: Optional JSON output for all commands, perfect for scripting.
+- 🎨 **Beautiful UI**: Styled output with clear status indicators and emojis.
+
+---
+
+## 📥 Installation
+
+### From Source
 ```bash
-npm install -g cu
+git clone https://github.com/AndroidPoet/cu-cli.git
+cd cu-cli
+npm install
+npm run build
+npm install -g .
 ```
 
-## Commands
+---
 
-### Authentication
+## 🔑 Authentication
+
+First, get your personal API token from [ClickUp Settings > Apps](https://app.clickup.com/settings/apps).
 
 ```bash
-# Set your ClickUp API token
-cu auth set pk_xxxxxxxxxxxxx
+# Set your token
+cu-cli auth set pk_your_token_here
 
-# Check if token is valid
-cu auth status
+# Verify connectivity
+cu-cli auth status
 ```
 
-Get your API token from: https://app.clickup.com/settings/apps
+*Or use an environment variable:* `export CLICKUP_API_TOKEN=pk_xxxxxxxxxxxxx`
 
-Or set via environment variable:
-```bash
-export CLICKUP_API_TOKEN=pk_xxxxxxxxxxxxx
-```
+---
 
-### Workspaces
+## 🛠 Usage Guide
 
+### 🏢 Workspaces & hierarchy
 ```bash
 # List all workspaces
-cu workspaces
+cu-cli workspaces
 
-# JSON output
-cu workspaces --json
-```
+# List spaces (uses first workspace by default)
+cu-cli spaces --workspace-id <id>
 
-### Spaces
-
-```bash
-# List spaces in a workspace
-cu spaces --workspace-id <id>
-
-# If no workspace specified, uses first available
-cu spaces
-```
-
-### Folders
-
-```bash
 # List folders in a space
-cu folders --space-id <id>
+cu-cli folders --space-id <id>
+
+# List lists in a folder or space
+cu-cli lists --folder-id <id>
+cu-cli lists --space-id <id>
 ```
 
-### Lists
+### 📝 Task Management
+| Feature | Command |
+| :--- | :--- |
+| **List Tasks** | `cu-cli tasks list --list-id <id> --status "In Progress"` |
+| **Get Details** | `cu-cli tasks get <task-id>` |
+| **Create Task** | `cu-cli tasks create --list-id <id> --name "New Bug Fix"` |
+| **Update Task** | `cu-cli tasks update <task-id> --status "Done"` |
+| **Delete Task** | `cu-cli tasks delete <task-id> --confirm` |
 
+#### Creating tasks with extra options:
 ```bash
-# List lists in a folder
-cu lists --folder-id <id>
-
-# Or list in a space (not in folder)
-cu lists --space-id <id>
+cu-cli tasks create \
+  --list-id 123456 \
+  --name "Urgent API Fix" \
+  --description "Fix the auth timeout issue" \
+  --priority 1 \
+  --tags "bug,high-priority"
 ```
 
-### Tasks
+---
 
-```bash
-# List tasks in a list
-cu tasks list --list-id <id>
+## ⚙️ Configuration
 
-# Filter by status
-cu tasks list --list-id <id> --status "Open"
-
-# Filter by assignee
-cu tasks list --list-id <id> --assignee <user-id>
-
-# Limit results
-cu tasks list --list-id <id> --limit 50
-```
-
-```bash
-# Get task details
-cu tasks get <task-id>
-```
-
-```bash
-# Create a task
-cu tasks create --list-id <id> --name "New Task"
-cu tasks create --list-id <id> --name "Task" --description "Details" --priority 2
-cu tasks create --list-id <id> --name "Task" --tags "bug,urgent"
-```
-
-```bash
-# Update a task
-cu tasks update <task-id> --name "New Name"
-cu tasks update <task-id> --status "In Progress"
-cu tasks update <task-id> --priority 1 --due-date 1700000000000
-```
-
-```bash
-# Delete a task
-cu tasks delete <task-id> --confirm
-```
-
-## Configuration
-
-Token is stored in `~/.cu/config.json`:
+Your configuration is stored locally in `~/.cu-cli/config.json`:
 
 ```json
 {
@@ -118,28 +100,33 @@ Token is stored in `~/.cu/config.json`:
 }
 ```
 
-## Priority Values
+---
 
-| Value | Priority |
-|-------|----------|
-| 1 | Urgent 🔴 |
-| 2 | High 🟠 |
-| 3 | Normal 🟢 |
-| 4 | Low ⚪ |
+## 🔴 Priority Cheat Sheet
 
-## Files
+| Value | Priority | Color |
+| :--- | :--- | :--- |
+| `1` | Urgent | 🔴 |
+| `2` | High | 🟠 |
+| `3` | Normal | 🟢 |
+| `4` | Low | ⚪ |
 
-- `src/cli/cu.ts` - CLI registration
-- `src/clickup/client.ts` - ClickUp API client
-- `src/commands/clickup/` - Command implementations
-  - `auth-set.ts`
-  - `auth-status.ts`
-  - `workspaces.ts`
-  - `spaces.ts`
-  - `folders.ts`
-  - `lists.ts`
-  - `tasks-list.ts`
-  - `task-get.ts`
-  - `task-create.ts`
-  - `task-update.ts`
-  - `task-delete.ts`
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please check out the [BUILD.md](./BUILD.md) for local development instructions.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## 📄 License
+
+Distributed under the ISC License. See `LICENSE` for more information.
+
+Developed with ❤️ by [AndroidPoet](https://github.com/AndroidPoet)
