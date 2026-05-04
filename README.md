@@ -1,6 +1,6 @@
 # 🚀 CU-CLI (ClickUp CLI)
 
-[![GitHub License](https://img.shields.io/github/license/AndroidPoet/cu-cli)](https://github.com/AndroidPoet/cu-cli/blob/master/LICENSE)
+[![GitHub License](https://img.shields.io/github/license/AndroidPoet/cu-cli?style=flat-square&color=blue)](https://github.com/AndroidPoet/cu-cli/blob/master/LICENSE)
 [![GitHub Stars](https://img.shields.io/github/stars/AndroidPoet/cu-cli)](https://github.com/AndroidPoet/cu-cli/stargazers)
 
 A powerful, standalone command-line interface for managing **ClickUp** tasks, lists, and workspaces with speed and efficiency. Built for developers who prefer the terminal over the browser.
@@ -127,6 +127,6 @@ Contributions are welcome! Please check out the [BUILD.md](./BUILD.md) for local
 
 ## 📄 License
 
-Distributed under the ISC License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 Developed with ❤️ by [AndroidPoet](https://github.com/AndroidPoet)
