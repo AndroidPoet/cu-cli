@@ -1,7 +1,7 @@
-import { createClickUpClient } from "../../clickup/client.js";
-import { loadConfig } from "../../config/config.js";
-import type { Runtime } from "../../runtime.js";
-import { theme } from "../../terminal/theme.js";
+import { createClickUpClient } from "../../../internal/api/client.js";
+import { loadConfig } from "../../../internal/config/config.js";
+import type { Runtime } from "../../../internal/cli/runtime.js";
+import { theme } from "../../../internal/cli/theme.js";
 
 export interface SpacesOptions {
   workspaceId?: string;

@@ -1,6 +1,6 @@
-import { loadConfig, writeConfigFile } from "../../config/config.js";
-import type { Runtime } from "../../runtime.js";
-import { theme } from "../../terminal/theme.js";
+import { loadConfig, writeConfigFile } from "../../../internal/config/config.js";
+import type { Runtime } from "../../../internal/cli/runtime.js";
+import { theme } from "../../../internal/cli/theme.js";
 
 export async function clickUpAuthSetCommand(token: string, runtime: Runtime): Promise<void> {
   if (!token.startsWith("pk_")) {

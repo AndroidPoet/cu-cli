@@ -1,11 +1,11 @@
-import { getClickUpToken, ClickUpClient } from "../../clickup/client.js";
-import { loadConfig } from "../../config/config.js";
-import type { Runtime } from "../../runtime.js";
-import { theme } from "../../terminal/theme.js";
+import { getClickUpToken, ClickUpClient } from "../../../internal/api/client.js";
+import { loadConfig } from "../../../internal/config/config.js";
+import type { Runtime } from "../../../internal/cli/runtime.js";
+import { theme } from "../../../internal/cli/theme.js";
 
 export async function clickUpAuthStatusCommand(runtime: Runtime): Promise<void> {
   const config = loadConfig();
-  const token = getClickUpToken(config);
+  const token = getClickUpToken();
 
   if (!token) {
     runtime.log(theme.error("ClickUp API token not configured."));

@@ -1,6 +1,6 @@
-import { createClickUpClient, type CreateTaskPayload } from "../../clickup/client.js";
-import type { Runtime } from "../../runtime.js";
-import { theme } from "../../terminal/theme.js";
+import { createClickUpClient, type CreateTaskPayload } from "../../../internal/api/client.js";
+import type { Runtime } from "../../../internal/cli/runtime.js";
+import { theme } from "../../../internal/cli/theme.js";
 
 export interface TaskCreateOptions {
   listId?: string;

@@ -1,4 +1,4 @@
-import type { Runtime } from "../runtime.js";
+import type { Runtime } from "../cli/runtime.js";
 
 export function getClickUpToken(): string | undefined {
   return (
