@@ -20,13 +20,20 @@ A powerful, standalone command-line interface for managing **ClickUp** tasks, li
 
 ## 📥 Installation
 
-### Via Homebrew
+Choose your preferred way to install CU-CLI:
+
+### 1. Via Homebrew (Recommended for macOS)
 ```bash
 brew tap AndroidPoet/tap
 brew install cu-cli
 ```
 
-### From Source
+### 2. Via npm (Directly from GitHub)
+```bash
+npm install -g AndroidPoet/cu-cli
+```
+
+### 3. From Source (For Developers)
 ```bash
 git clone https://github.com/AndroidPoet/cu-cli.git
 cd cu-cli
@@ -34,6 +41,25 @@ npm install
 npm run build
 npm install -g .
 ```
+
+---
+
+## 🚀 Quick Start
+
+Once installed, follow these steps to get started:
+
+1.  **Configure your token:**
+    ```bash
+    cu-cli auth set <your_clickup_token>
+    ```
+2.  **Verify the setup:**
+    ```bash
+    cu-cli auth status
+    ```
+3.  **List your workspaces:**
+    ```bash
+    cu-cli workspaces
+    ```
 
 ---
 
