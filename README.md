@@ -20,6 +20,12 @@ A powerful, standalone command-line interface for managing **ClickUp** tasks, li
 
 ## 📥 Installation
 
+### Via Homebrew
+```bash
+brew tap AndroidPoet/tap
+brew install cu-cli
+```
+
 ### From Source
 ```bash
 git clone https://github.com/AndroidPoet/cu-cli.git
