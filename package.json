@@ -1,5 +1,5 @@
 {
-  "name": "cu-cli",
+  "name": "@androidpoet/cu-cli",
   "version": "1.0.0",
   "description": "Standalone ClickUp CLI",
   "main": "dist/cmd/cu-cli/main.js",

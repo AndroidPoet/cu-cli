@@ -30,7 +30,7 @@ brew install cu-cli
 
 ### 2. Via npm (Directly from GitHub)
 ```bash
-npm install -g AndroidPoet/cu-cli
+npm install -g @androidpoet/cu-cli
 ```
 
 ### 3. From Source (For Developers)
