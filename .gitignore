@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+.npm
+npm-debug.log*
+
+# Build output
+dist/
+lib/
+bin/*.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Config and secrets
+.env
+.env.local
+.openclaw/
+.clickup-cli/
+openclaw.json
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+test_token.js
+test_token_deep.js
