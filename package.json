@@ -17,7 +17,7 @@
     "cli",
     "cu-cli"
   ],
-  "author": "",
+  "author": "Ranbir Singh",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.3.0",
