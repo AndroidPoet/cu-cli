@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="art/logo.svg" width="800" alt="CU-CLI">
-</p>
-
 # 🚀 CU-CLI (ClickUp CLI)
 
 [![GitHub License](https://img.shields.io/github/license/AndroidPoet/cu-cli?style=flat-square&color=blue)](https://github.com/AndroidPoet/cu-cli/blob/master/LICENSE)

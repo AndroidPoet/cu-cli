@@ -6,9 +6,6 @@
   "bin": {
     "cu-cli": "dist/cmd/cu-cli/main.js"
   },
-  "files": [
-    "dist"
-  ],
   "type": "module",
   "scripts": {
     "build": "tsc",
