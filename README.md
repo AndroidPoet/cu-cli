@@ -162,3 +162,15 @@ Contributions are welcome! Please check out the [BUILD.md](./BUILD.md) for local
 Distributed under the MIT License. See `LICENSE` for more information.
 
 Developed with ❤️ by [AndroidPoet](https://github.com/AndroidPoet)
+
+## Contributing
+
+Contributions are welcome! If you've found a bug, have an idea for an improvement, or want to contribute new features, please open an issue or submit a pull request.
+
+## Find this repository useful? :heart:
+Support it by joining __[stargazers](https://github.com/androidpoet/cu-cli/stargazers)__ for this repository. :star: <br>
+Also, __[follow me](https://github.com/androidpoet)__ on GitHub for my next creations! 🤩
+
+## License
+
+[MIT](LICENSE) © 2026 Ranbir Singh
